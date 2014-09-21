@@ -1,0 +1,28 @@
+<div style="border: 1px black solid; max-width: 40%; min-width: 25%">
+     POSTS
+
+<table>
+	  <tr>
+	    <th>Title:</th>
+	    <th>Text:</th>
+	   
+	  </tr> 
+
+	  <% @posts.each do |a| %>
+	    <tr>
+
+	      <td><%= a.title %></td>
+	      <td><%= a.text %></td>
+
+	      <td><%= link_to("Delete Post", post_path(a), method: :delete) %>
+	      </td>
+
+	    </tr>
+	  <% end %>
+
+</table>	  
+
+	<%= flash[:notice] if flash[:notice] %>
+	<%= flash[:alert] if flash[:alert] %>
+
+</div>	
