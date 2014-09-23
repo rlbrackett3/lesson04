@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	def index
+		# for a nested resource the controller will look a bit different since you will have to find the user and then the posts
 		@posts = Post.all
 	  if @posts.count 
 	     flash[:notice] = "Posts display successfully."
