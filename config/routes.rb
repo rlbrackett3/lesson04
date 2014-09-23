@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get 'posts/new/' => 'posts#new'
   get 'posts/show/:id' => 'posts#show'
   get 'posts/index' => 'posts#index'
+  
+  #you should have a nested resource users/:di/posts
+  resources :users do
+    resources :posts
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
